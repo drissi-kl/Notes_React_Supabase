@@ -3,7 +3,7 @@ import "../style/login.css";
 import supabase from '../supabase';
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Signup() {
   const navigate = useNavigate();
 
   const [email, setEmail]=useState('');
@@ -20,14 +20,15 @@ export default function Login() {
     if(!email || !password){
       setMessage("* email and password are required for login")
     }else{
-      let { data, error } = await supabase.auth.signInWithPassword({email, password})
+      
+        let { data, error } = await supabase.auth.signUp({email, password})
 
-      if(data?.user){
-        navigate("/notes");
-      }
-      if(error){
-        setMessage(error.message);
-      }
+        if(data?.user){
+            navigate("/");
+        }
+        if(error){
+            setMessage(error.message);
+        }
     }
 
     setLoading(false)
@@ -38,7 +39,7 @@ export default function Login() {
   return ( <div className="container">
     <div className='login'>
       <p className="title">Notes App</p>
-      <p className='definePage'>Login</p>
+      <p className='definePage'>Sign up</p>
 
       <form action="" onSubmit={(e)=>handleLogin(e)}>
         <div className="input">
@@ -53,11 +54,11 @@ export default function Login() {
           message && <p className='error'>{message}</p>
         }
         <button type='submit'>
-          Login
+          Sing up
         </button>
-        <div className='gotosignup'>
-          if you don't have accout, 
-          <Link to="/signup">sign up</Link>
+        <div className='gotologin'>
+          if you have already accout, 
+          <Link to="/">log in</Link>
           
         </div>
       </form>

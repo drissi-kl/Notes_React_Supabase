@@ -9,6 +9,8 @@ import Create from './components/Create';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import supabase from './supabase';
 import Upadate from './components/Update';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
 
@@ -30,10 +32,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element = {<NavBar />} >
+        <Route path='/' element={<Login /> } />
+        <Route path='/signup' element={<Signup /> } />
+        <Route path='/notes' element = {<NavBar />} >
           <Route index element = {<Home posts = {posts} refetch={()=>fetchPosts()} />}  />
-          <Route path='/create' element = {<Create refetch = {()=>fetchPosts()} />}  />
-          <Route path='/update/:id' element = {<Upadate refetch = {()=>fetchPosts()} posts = {posts} />}  />
+          <Route path='create' element = {<Create refetch = {()=>fetchPosts()} />}  />
+          <Route path='update/:id' element = {<Upadate refetch = {()=>fetchPosts()} posts = {posts} />}  />
 
         </Route >
       

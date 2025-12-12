@@ -6,13 +6,13 @@ export default function Home({posts, refetch}){
 
     return <div>
         <h2>All Posts:</h2>
-
+{/* 
         <div className="showPosts">
             {
                 posts && posts.map((post)=>{return <Post key={post.id} post={post} refetch={()=>refetch()} /> })
             }
             
-        </div>
+        </div> */}
 
     </div>
 }
