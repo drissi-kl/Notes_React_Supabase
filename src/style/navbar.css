@@ -1,0 +1,36 @@
+nav .navbar{
+    display: flex;
+    border: 1px solid red;
+    align-items: center;
+    
+}
+
+
+nav .navbar .logo{
+    padding: 8px 15px;
+    font-weight: 600;
+}
+
+nav .navbar .options{
+    display: flex;
+    gap: 15px;
+}
+nav .navbar .options .option{
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
