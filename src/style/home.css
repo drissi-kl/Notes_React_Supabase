@@ -1,0 +1,56 @@
+.home{
+    padding: 20px 10px;
+
+}
+
+.home .notes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px
+}
+
+
+.home .notes .note{
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 1px #999;
+}
+.home .notes .note .title{
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: 600;
+}
+.home .notes .note .description{
+    margin-bottom:15px ;
+}
+.home .notes .note .created_at{
+    color: #999;
+    margin-bottom:15px ;
+}
+
+
+.home .notes .note .actions{
+    display: flex;
+    gap: 10px
+}
+.home .notes .note .actions button{
+    padding: 8px 15px;
+    border:none;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.home .notes .note .actions button.deleteBtn{
+    background-color: rgb(253, 193, 193);
+    color: red
+}
+.home .notes .note .actions button.updateBtn{
+    background-color: rgb(124, 255, 124);
+    color: rgb(11, 110, 11)
+}
+
+
+

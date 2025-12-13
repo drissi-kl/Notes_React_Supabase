@@ -22,7 +22,9 @@ export default function Login() {
     }else{
       let { data, error } = await supabase.auth.signInWithPassword({email, password})
 
+      console.log('data', data)
       if(data?.user){
+        
         navigate("/notes");
       }
       if(error){
@@ -53,7 +55,7 @@ export default function Login() {
           message && <p className='error'>{message}</p>
         }
         <button type='submit'>
-          Login
+          {loading? "Login...": "Login"}
         </button>
         <div className='gotosignup'>
           if you don't have accout, 

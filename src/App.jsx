@@ -14,19 +14,20 @@ import Signup from './components/Signup';
 
 function App() {
 
-  const [posts, setPosts]=useState([]);
+  const [notes, setNotes]=useState([]);
 
-  const fetchPosts = async ()=>{
-    const response = await supabase.from("posts").select().order("id",{ascending: true});
+  const fetchNotes = async ()=>{
+    const response = await supabase.from("notes").select().order("created_at",{ascending: false});
     if(!response.error){
-      setPosts(response.data)
+      setNotes(response.data);
     }
-    console.log(response.data);
   }
 
   useEffect(()=>{
-    fetchPosts()
+    fetchNotes()
   }, []);
+
+
 
 
   return (
@@ -35,9 +36,9 @@ function App() {
         <Route path='/' element={<Login /> } />
         <Route path='/signup' element={<Signup /> } />
         <Route path='/notes' element = {<NavBar />} >
-          <Route index element = {<Home posts = {posts} refetch={()=>fetchPosts()} />}  />
-          <Route path='create' element = {<Create refetch = {()=>fetchPosts()} />}  />
-          <Route path='update/:id' element = {<Upadate refetch = {()=>fetchPosts()} posts = {posts} />}  />
+          <Route index element = {<Home notes = {notes} refetch={()=>fetchNotes()} />}  />
+          <Route path='create' element = {<Create refetch = {()=>fetchNotes()} />}  />
+          {/* <Route path='update/:id' element = {<Upadate refetch = {()=>fetchNotes()} notes = {notes} />}  /> */}
 
         </Route >
       

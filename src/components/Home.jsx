@@ -1,18 +1,18 @@
-import Post from "./Item";
+import Note from "./Note";
 
+import "../style/home.css";
 
-export default function Home({posts, refetch}){
-    const pattren = /^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/gi;
+export default function Home({notes, refetch}){
+    // const pattren = /^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}/gi;
 
-    return <div>
-        <h2>All Posts:</h2>
-{/* 
-        <div className="showPosts">
+    return <div className="home">
+    
+        <div className="notes">
             {
-                posts && posts.map((post)=>{return <Post key={post.id} post={post} refetch={()=>refetch()} /> })
+                notes && notes.map((note)=>{return <Note key={note.id} note={note} refetch={()=>refetch()} /> })
             }
             
-        </div> */}
+        </div>
 
     </div>
 }

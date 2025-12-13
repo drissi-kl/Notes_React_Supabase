@@ -1,35 +1,38 @@
 nav .navbar{
     display: flex;
-    border: 1px solid red;
     align-items: center;
-    
+    justify-content: space-between;
+    padding: 10px;
+    align-items: end;
+    background-color: antiquewhite;
 }
 
 
-nav .navbar .logo{
-    padding: 8px 15px;
-    font-weight: 600;
-}
-
-nav .navbar .options{
+nav .navbar .leftSide{ 
     display: flex;
     gap: 15px;
+    align-items: end;
 }
-nav .navbar .options .option{
+nav .navbar .leftSide .logo{ 
+    font-weight: 600;
+    font-size: 24px;
+}
+
+nav .navbar .leftSide .option{
     text-decoration: none;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    
+}
+nav .navbar .leftSide .active{
+    font-weight: 600;    
 }
 
 
+nav .navbar .rightSide .logoutBtn{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
 
-
-
-
-
-
-
-
+}
 
 
 
